@@ -1,23 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Select from "react-select";
+import "./App.css";
 
 function App() {
+  const [ariaFocusMessage, setAriaFocusMessage] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const colourOptions = [
+    {
+      value: 'purple', label: 'Purple'
+    },
+    {
+      value: 'red', label: 'Red'
+    }
+  ];
+
+  const style = {
+    blockquote: {
+      fontStyle: "italic",
+      fontSize: ".75rem",
+      margin: "1rem 0",
+    },
+    label: {
+      fontSize: ".75rem",
+      fontWeight: "bold",
+      lineHeight: 2,
+    },
+  };
+
+  const onFocus = ({ focused, isDisabled }) => {
+    const msg = `You are currently focused on option ${focused.label}${
+      isDisabled ? ", disabled" : ""
+    }`;
+    setAriaFocusMessage(msg);
+    return msg;
+  };
+
+  const onMenuOpen = () => setIsMenuOpen(true);
+  const onMenuClose = () => setIsMenuOpen(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form className="w-50">
+        <label style={style.label} id="aria-label" htmlFor="aria-example-input">
+          Select a color
+        </label>
+
+        {!!ariaFocusMessage && !!isMenuOpen && (
+          <blockquote style={style.blockquote}>"{ariaFocusMessage}"</blockquote>
+        )}
+
+        <Select
+          aria-labelledby="aria-label"
+          ariaLiveMessages={{
+            onFocus,
+          }}
+          inputId="aria-example-input"
+          name="aria-live-color"
+          onMenuOpen={onMenuOpen}
+          onMenuClose={onMenuClose}
+          options={colourOptions}
+        />
+      </form>
     </div>
   );
 }

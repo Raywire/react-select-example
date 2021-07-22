@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import Select from "react-select";
 import "./App.css";
 
 function App() {
-  const [ariaFocusMessage, setAriaFocusMessage] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const colourOptions = [
     {
       value: 'purple', label: 'Purple'
+    },
+    {
+      value: 'blue', label: 'Blue'
+    },
+    {
+      value: 'orange', label: 'Orange'
+    },
+    {
+      value: 'yellow', label: 'Yellow'
     },
     {
       value: 'red', label: 'Red'
@@ -32,23 +39,22 @@ function App() {
     const msg = `You are currently focused on option ${focused.label}${
       isDisabled ? ", disabled" : ""
     }`;
-    setAriaFocusMessage(msg);
     return msg;
   };
+  
+  useEffect(() => {
+    document.getElementById("aria-example-input").focus();
+    return () => {
 
-  const onMenuOpen = () => setIsMenuOpen(true);
-  const onMenuClose = () => setIsMenuOpen(false);
+    }
+  }, [])
 
   return (
     <div className="App">
-      <form className="w-50">
+      <form className="w-50" onSubmit={(e) => e.preventDefault()}>
         <label style={style.label} id="aria-label" htmlFor="aria-example-input">
           Select a color
         </label>
-
-        {!!ariaFocusMessage && !!isMenuOpen && (
-          <blockquote style={style.blockquote}>"{ariaFocusMessage}"</blockquote>
-        )}
 
         <Select
           aria-labelledby="aria-label"
@@ -57,8 +63,6 @@ function App() {
           }}
           inputId="aria-example-input"
           name="aria-live-color"
-          onMenuOpen={onMenuOpen}
-          onMenuClose={onMenuClose}
           options={colourOptions}
         />
       </form>

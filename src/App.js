@@ -23,11 +23,6 @@ function App() {
   ];
 
   const style = {
-    blockquote: {
-      fontStyle: "italic",
-      fontSize: ".75rem",
-      margin: "1rem 0",
-    },
     label: {
       fontSize: ".75rem",
       fontWeight: "bold",

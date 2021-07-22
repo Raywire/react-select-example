@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-select-example/static/css/main.9b7eddfd.chunk.css",
-    "main.js": "/react-select-example/static/js/main.4e50fbfd.chunk.js",
-    "main.js.map": "/react-select-example/static/js/main.4e50fbfd.chunk.js.map",
+    "main.css": "/react-select-example/static/css/main.fea95931.chunk.css",
+    "main.js": "/react-select-example/static/js/main.5a75dd71.chunk.js",
+    "main.js.map": "/react-select-example/static/js/main.5a75dd71.chunk.js.map",
     "runtime-main.js": "/react-select-example/static/js/runtime-main.a2a845b2.js",
     "runtime-main.js.map": "/react-select-example/static/js/runtime-main.a2a845b2.js.map",
     "static/js/2.473a196d.chunk.js": "/react-select-example/static/js/2.473a196d.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.e8695dda.chunk.js": "/react-select-example/static/js/3.e8695dda.chunk.js",
     "static/js/3.e8695dda.chunk.js.map": "/react-select-example/static/js/3.e8695dda.chunk.js.map",
     "index.html": "/react-select-example/index.html",
-    "static/css/main.9b7eddfd.chunk.css.map": "/react-select-example/static/css/main.9b7eddfd.chunk.css.map",
+    "static/css/main.fea95931.chunk.css.map": "/react-select-example/static/css/main.fea95931.chunk.css.map",
     "static/js/2.473a196d.chunk.js.LICENSE.txt": "/react-select-example/static/js/2.473a196d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a2a845b2.js",
     "static/js/2.473a196d.chunk.js",
-    "static/css/main.9b7eddfd.chunk.css",
-    "static/js/main.4e50fbfd.chunk.js"
+    "static/css/main.fea95931.chunk.css",
+    "static/js/main.5a75dd71.chunk.js"
   ]
 }
